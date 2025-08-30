@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $fk_turma = $_POST['fk_turma'];
         $fk_professor = $_POST['fk_professor'];
 
-        $sql = "INSERT INTO alunos(descricao, fk_turma, fk_professor) VALUES ('$descricao', '$fk_turma', '$fk_professor')";
+        $sql = "INSERT INTO atividades(descricao, fk_turma, fk_professor) VALUES ('$descricao', '$fk_turma', '$fk_professor')";
 
         if ($conn->query($sql) == true) {
             echo "Registro Adicionado";
@@ -131,13 +131,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <form method="POST">
         <label for="">Adicionar Atividade:</label>
         <br><br>
-        <input type="text" name="nome" placeholder="Digite a descrição">
+        <input type="text" name="descricao" placeholder="Digite a descrição">
         <br><br>
-        <input type="text" name="fk_turma" placeholder="Digite a turma">
+        <input type="text" name="fk_turma" placeholder="Digite a turma (ID)">
         <br><br>
-        <input type="text" name="fk_professor" placeholder="Digite o professor">
+        <input type="text" name="fk_professor" placeholder="Digite o professor (ID)">
         <br><br>
-        <button type="submit" name="addAtividade">Adicionar Turma</button>
+        <button type="submit" name="addAtividade">Adicionar Atividade</button>
     </form>
 </body>
 
