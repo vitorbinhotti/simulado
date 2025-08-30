@@ -31,4 +31,4 @@ create table atividades (
     FOREIGN KEY (fk_turma) references turmas(id_turma),
     fk_professor int not null,
     FOREIGN key (fk_professor) references professores(id_professor)
-)
+);

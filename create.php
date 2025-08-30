@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($conn->query($sql) == true) {
             echo "Registro Adicionado";
             $conn->close();
+            header('Location: read.php');
             exit();
         } else {
             echo "Erro" . $sql . "<br>" . $conn->error;
@@ -79,11 +80,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Registro</title>
+    <link rel="stylesheet" href="./estilos/style.css">
+    <link rel="stylesheet" href="./estilos/reset.css">
 </head>
 
 <body>
-    <form method="POST">
-        <label for="">Adicionar Turma:</label>
+    <form method="POST" class="form-container">
+        <label for="">
+            <p>Adicionar Turma:</p>
+        </label>
         <br><br>
         <input type="text" name="nome" placeholder="Digite o Nome da Turma">
         <br><br>
@@ -94,8 +99,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <br><br>
 
-    <form method="POST">
-        <label for="">Adicionar Professor:</label>
+    <form method="POST" class="form-container">
+        <label for="">
+            <p>Adicionar Professor:</p>
+        </label>
         <br><br>
         <input type="text" name="nome" placeholder="Digite o Nome do Professor">
         <br><br>
@@ -104,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="text" name="fk_turma" placeholder="ID turma">
         <br><br>
         <select name="materia">
-            <option>Selecione uma materia</option>
+            <option selected disabled>Selecione uma materia</option>
             <option value="ciencias">Ciências</option>
             <option value="historia">História</option>
             <option value="portugues">Português</option>
@@ -116,8 +123,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <br>
 
-    <form method="POST">
-        <label for="">Adicionar Aluno:</label>
+    <form method="POST" class="form-container">
+        <label for="">
+            <p>Adicionar Aluno:</p>
+        </label>
         <br><br>
         <input type="text" name="nome" placeholder="Digite o Nome do Aluno">
         <br><br>
@@ -128,8 +137,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <br>
 
-    <form method="POST">
-        <label for="">Adicionar Atividade:</label>
+    <form method="POST" class="form-container">
+        <label for="">
+            <p>Adicionar Atividade:</p>
+        </label>
         <br><br>
         <input type="text" name="descricao" placeholder="Digite a descrição">
         <br><br>
